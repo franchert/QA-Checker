@@ -10,6 +10,7 @@ Config page content
   Ability to change tab text, html form entries  
 Functionality
   Needs iframe src, form submit destination variables
-  
+Drupal 7.x
+
 Anything else?
   
