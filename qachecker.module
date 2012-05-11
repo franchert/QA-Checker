@@ -1,0 +1,70 @@
+<?php
+/**
+ * Implements hook_help().
+ */
+ 
+function qachecker_help($path, $arg){
+	$output = '';
+	switch($path){
+	case "admin/help#qachecker":
+		$output = '<p>'. t("Integration to QA Checker application") .'</p>';
+		break;
+	}
+	return $output;
+}
+
+/**
+ * Implements hook_perm().
+ */
+function qachecker_perm(){
+	return array ('access qachecker','administer qachecker');
+}
+
+/**
+* Implementation of hook_menu().
+*/
+function qachecker_menu() {
+	$items['node/%/qa'] = array(
+		'title' => 'QA',
+		'page callback' => 'mycallback',
+		'page arguments' => array(1),
+		'access callback' => TRUE,
+		'access arguments' => array(1),
+		'type' => MENU_LOCAL_TASK,
+	);
+return $items;
+}
+
+/**
+* Menu callback; prepopulates the page.
+*/
+function mycallback($param) {
+//$node = node_load($param , $revision = NULL, $reset = NULL);
+global $user;
+$node = '<iframe width=500 height=500 src="http://www.google.com"></iframe>'
+
+/*
+		'<p>'. 
+			t("Fill out the following QA form:") .
+		'</p>'.
+		'<form name="" action="" method="post">'.
+		'<p>'.
+			t("User:     ").
+			$user->name .
+		'</p>'.
+		'<p>'.
+			t("Node ID:     ").
+			$param.
+		'</p>'.
+		'<p>'. 	
+			t("QA comments:").
+		'<br>'.
+			'<textarea name="qatext" cols=65 rows=10></textarea>'.
+		'</p>'.
+
+			'<input type="submit" value="submit">'.
+		'</form>'
+*/		
+		;
+return $node;
+}

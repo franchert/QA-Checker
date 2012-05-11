@@ -1,0 +1,3 @@
+name = QA Checker
+description = drupal integration with QA Checker application
+core = 6.x
